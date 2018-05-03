@@ -2,7 +2,7 @@ import { c } from "./c";
 
 export abstract class Game {
 
-  constructor(ctx: CanvasRenderingContext2D) {
+  protected constructor(ctx: CanvasRenderingContext2D) {
     console.debug(ctx);
     this.preventScrollbar();
     this.fit();

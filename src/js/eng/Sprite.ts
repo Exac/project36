@@ -8,7 +8,8 @@ export default class Sprite {
   // private static imagesLoaded: [HTMLImageElement];
   // private static imagesPending: [HTMLImageElement];
   //
-  // private loaded = false;
+  // noinspection JSUnusedLocalSymbols
+  private loaded = false;
 
   constructor() {
     // const json = require("../game/assets/1/sprite.json");

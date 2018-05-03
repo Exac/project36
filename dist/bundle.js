@@ -148,13 +148,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * have a separate weapon sprite and a body sprite.
  */
 var Sprite = /** @class */ (function () {
-    // private static imagesLoaded: [HTMLImageElement];
-    // private static imagesPending: [HTMLImageElement];
-    //
-    // private loaded = false;
     function Sprite() {
         // const json = require("../game/assets/1/sprite.json");
         // console.log("Sprite.constructor()", JSON.stringify(json));
+        // private static imagesLoaded: [HTMLImageElement];
+        // private static imagesPending: [HTMLImageElement];
+        //
+        // noinspection JSUnusedLocalSymbols
+        this.loaded = false;
         // const full: HTMLImageElement = new Image();
         // full.onload = () => {
         //
