@@ -71,6 +71,27 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/js/eng/Entity.ts":
+/*!******************************!*\
+  !*** ./src/js/eng/Entity.ts ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var Entity = /** @class */ (function () {
+    function Entity(arg) {
+        this.name = arg.toString();
+    }
+    return Entity;
+}());
+exports.default = Entity;
+
+
+/***/ }),
+
 /***/ "./src/js/eng/Game.ts":
 /*!****************************!*\
   !*** ./src/js/eng/Game.ts ***!
@@ -83,13 +104,12 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var c_1 = __webpack_require__(/*! ./c */ "./src/js/eng/c.ts");
 var Game = /** @class */ (function () {
-    function Game(canvas) {
+    function Game(ctx) {
         var _this = this;
         this.render = function () {
-            console.debug("Game.render()");
+            // TODO: implement
         };
         this.fit = function () {
-            console.debug("Game.fit()");
             var p = c_1.c.canvas.parentElement;
             c_1.c.canvas.width = p.clientWidth;
             c_1.c.canvas.height = p.clientWidth * (0.5625);
@@ -100,7 +120,7 @@ var Game = /** @class */ (function () {
             // browsers.
             c_1.c.canvas.parentElement.style.overflowY = "hidden";
         };
-        console.debug("Game.constructor()");
+        console.debug(ctx);
         this.preventScrollbar();
         this.fit();
         window.addEventListener("resize", this.fit);
@@ -121,22 +141,26 @@ exports.Game = Game;
 
 "use strict";
 
+// import { c } from "./c";
 Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * The Sprite class deals with drawing the actual graphics. A player sprite may
  * have a separate weapon sprite and a body sprite.
  */
 var Sprite = /** @class */ (function () {
+    // private static imagesLoaded: [HTMLImageElement];
+    // private static imagesPending: [HTMLImageElement];
+    //
+    // private loaded = false;
     function Sprite() {
-        // const json = require("../game/assets/dog-1/sprite.json");
+        // const json = require("../game/assets/1/sprite.json");
         // console.log("Sprite.constructor()", JSON.stringify(json));
-        this.loaded = false; //
         // const full: HTMLImageElement = new Image();
         // full.onload = () => {
         //
         //   c.drawImage(full, 128, 0, 64, 64, 20, 25, 64, 64);
         // };
-        // full.src = "src/js/game/assets/dog-1/"+json.file || "src/js/game/assets/default/default.png";
+        // full.src = "src/js/game/assets/1/"+json.file || "src/js/game/assets/0/0.png";
     }
     Sprite.prototype.render = function () {
         // TODO draw this frame onto the canvas when externally called in order.
@@ -204,6 +228,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var c_1 = __webpack_require__(/*! ../eng/c */ "./src/js/eng/c.ts");
+var Entity_1 = __importDefault(__webpack_require__(/*! ../eng/Entity */ "./src/js/eng/Entity.ts"));
 var Game_1 = __webpack_require__(/*! ../eng/Game */ "./src/js/eng/Game.ts");
 var Sprite_1 = __importDefault(__webpack_require__(/*! ../eng/Sprite */ "./src/js/eng/Sprite.ts"));
 var P36Game = /** @class */ (function (_super) {
@@ -224,7 +249,9 @@ var P36Game = /** @class */ (function (_super) {
             // TODO: Only render if not already rendering in a loop.
             requestAnimationFrame(_this.render);
         };
+        var e = new Entity_1.default("");
         var s = new Sprite_1.default();
+        console.debug(e, s);
         _this.render();
         return _this;
     }

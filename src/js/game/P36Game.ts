@@ -1,11 +1,14 @@
 import { c } from "../eng/c";
+import Entity from "../eng/Entity";
 import { Game } from "../eng/Game";
 import Sprite from "../eng/Sprite";
 
 export default class P36Game extends Game {
   constructor(canvas: CanvasRenderingContext2D) {
     super(canvas);
+    const e: Entity = new Entity("");
     const s: Sprite = new Sprite();
+    console.debug(e, s);
 
     this.render();
   }

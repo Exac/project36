@@ -3,9 +3,11 @@
 ## Usage
 
 ## Development
-##### Requirements"
+##### Requirements
 
 Include the following in the HTML: ```<canvas id="project36"></canvas>``` then include the javascript (built to /dist/bundle).
+
+In WebStorm, open settings (alt+ctrl+S), and search for ```safe write``` and disable it under System Settings. This enables webpack to watch your files for changes.
 
 ##### Compilation:
 

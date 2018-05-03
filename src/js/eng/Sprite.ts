@@ -1,14 +1,17 @@
-import { c } from "./c";
+// import { c } from "./c";
 
 /**
  * The Sprite class deals with drawing the actual graphics. A player sprite may
  * have a separate weapon sprite and a body sprite.
  */
 export default class Sprite {
-  private loaded = false; //
+  // private static imagesLoaded: [HTMLImageElement];
+  // private static imagesPending: [HTMLImageElement];
+  //
+  // private loaded = false;
 
   constructor() {
-    // const json = require("../game/assets/dog-1/sprite.json");
+    // const json = require("../game/assets/1/sprite.json");
     // console.log("Sprite.constructor()", JSON.stringify(json));
 
     // const full: HTMLImageElement = new Image();
@@ -16,7 +19,7 @@ export default class Sprite {
     //
     //   c.drawImage(full, 128, 0, 64, 64, 20, 25, 64, 64);
     // };
-    // full.src = "src/js/game/assets/dog-1/"+json.file || "src/js/game/assets/default/default.png";
+    // full.src = "src/js/game/assets/1/"+json.file || "src/js/game/assets/0/0.png";
   }
 
   public render() {

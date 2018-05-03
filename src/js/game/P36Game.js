@@ -14,6 +14,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var c_1 = require("../eng/c");
+var Entity_1 = __importDefault(require("../eng/Entity"));
 var Game_1 = require("../eng/Game");
 var Sprite_1 = __importDefault(require("../eng/Sprite"));
 var P36Game = /** @class */ (function (_super) {
@@ -34,7 +35,9 @@ var P36Game = /** @class */ (function (_super) {
             // TODO: Only render if not already rendering in a loop.
             requestAnimationFrame(_this.render);
         };
+        var e = new Entity_1.default("");
         var s = new Sprite_1.default();
+        console.debug(e, s);
         _this.render();
         return _this;
     }
