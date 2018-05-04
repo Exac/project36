@@ -2,27 +2,31 @@ import { c } from "./c";
 
 export abstract class Game {
 
-  protected constructor(ctx: CanvasRenderingContext2D) {
-    console.debug(ctx);
+  constructor(ctx: CanvasRenderingContext2D) {
     this.preventScrollbar();
     this.fit();
     window.addEventListener("resize", this.fit);
   }
 
   public render = () => {
-    // TODO: implement
+    // TODO: implement by calling render IN ORDER for all the game's entities
   }
 
+  /**
+   * Fit resizes the canvas to match the screen width. It requires render() to
+   * draw the changes onto the new canvas however.
+   */
   public fit = (): void => {
     const p = c.canvas.parentElement!;
     c.canvas.width = p.clientWidth;
     c.canvas.height = p.clientWidth * (0.5625);
-    this.render();
   }
 
+  /**
+   * This prevents the scrollbar from appearing on the body element in Desktop
+   * browsers.
+   */
   private preventScrollbar = () => {
-    // This prevents the scrollbar from appearing on the body element in Desktop
-    // browsers.
     c.canvas.parentElement!.style.overflowY = "hidden";
   }
 }

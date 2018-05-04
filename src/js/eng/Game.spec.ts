@@ -39,6 +39,14 @@ describe("Game", () => {
         "container when called again.");
     });
   });
+  describe("#fit()", () => {
+    it("does it's job silently", () => {
+      const game = new G(c);
+      game.fit();
+      const expectedWidth = c.canvas.parentElement!.clientWidth;
+      expect(c.canvas.width).equal(expectedWidth);
+    });
+  });
   describe("#preventScrollBar()", () => {
     it("hides the scroll bar", () => {
       assert.equal("hidden", c.canvas.parentElement!.style.overflowY,

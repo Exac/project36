@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var Entity = /** @class */ (function () {
-    function Entity(arg) {
-        this.name = arg.toString();
+    function Entity(placeholder) {
+        this.name = placeholder.toString();
     }
     return Entity;
 }());

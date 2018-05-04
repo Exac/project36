@@ -54,6 +54,14 @@ describe("Game", function () {
                 "container when called again.");
         });
     });
+    describe("#fit()", function () {
+        it("does it's job silently", function () {
+            var game = new G(c_1.c);
+            game.fit();
+            var expectedWidth = c_1.c.canvas.parentElement.clientWidth;
+            chai_1.expect(c_1.c.canvas.width).equal(expectedWidth);
+        });
+    });
     describe("#preventScrollBar()", function () {
         it("hides the scroll bar", function () {
             chai_2.assert.equal("hidden", c_1.c.canvas.parentElement.style.overflowY, "Vertical scroll-bar is hidden via css.");

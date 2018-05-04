@@ -1,7 +1,11 @@
+import { Component } from "./Component";
+
 export default class Entity {
+  public static stage: [Component];
+
   public name: string;
 
-  constructor(arg: any) {
-    this.name = arg.toString();
+  constructor(placeholder: any) {
+    this.name = placeholder.toString();
   }
 }

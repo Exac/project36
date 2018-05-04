@@ -37,7 +37,6 @@ var P36Game = /** @class */ (function (_super) {
         };
         var e = new Entity_1.default("");
         var s = new Sprite_1.default();
-        console.debug(e, s);
         _this.render();
         return _this;
     }

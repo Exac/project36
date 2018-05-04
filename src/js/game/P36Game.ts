@@ -8,7 +8,6 @@ export default class P36Game extends Game {
     super(canvas);
     const e: Entity = new Entity("");
     const s: Sprite = new Sprite();
-    console.debug(e, s);
 
     this.render();
   }
