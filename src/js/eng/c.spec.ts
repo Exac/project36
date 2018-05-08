@@ -4,8 +4,7 @@ import { c } from "./c";
 
 describe("c", () => {
   it("exists", () => {
-    const myC: CanvasRenderingContext2D = c;
-    assert.exists(myC);
+    assert.exists(c);
   });
   it("gets a canvas context", () => {
     assert.isFunction(c.fillRect, "canvas context seems to exist");

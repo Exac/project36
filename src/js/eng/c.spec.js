@@ -5,8 +5,7 @@ require("mocha");
 var c_1 = require("./c");
 describe("c", function () {
     it("exists", function () {
-        var myC = c_1.c;
-        chai_1.assert.exists(myC);
+        chai_1.assert.exists(c_1.c);
     });
     it("gets a canvas context", function () {
         chai_1.assert.isFunction(c_1.c.fillRect, "canvas context seems to exist");

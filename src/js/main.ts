@@ -1,5 +1,7 @@
 "use strict";
 
+import "../css/main.scss";
+import "../css/reset.scss";
 import { c } from "./eng/c";
 import P36Game from "./game/P36Game";
 

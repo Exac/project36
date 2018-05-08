@@ -1,14 +1,4 @@
 "use strict";
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
@@ -17,13 +7,6 @@ var chai_1 = require("chai");
 var Entity_1 = __importDefault(require("./Entity"));
 var EntityShim_1 = require("./EntityShim");
 var SimpleComponent_1 = __importDefault(require("./SimpleComponent"));
-var E = /** @class */ (function (_super) {
-    __extends(E, _super);
-    function E(placeholder) {
-        return _super.call(this, placeholder) || this;
-    }
-    return E;
-}(Entity_1.default));
 describe("Entity", function () {
     it("can create simple shim of abstract Entity", function () {
         chai_1.assert.isOk(new EntityShim_1.EntityShim({}));

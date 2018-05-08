@@ -1,4 +1,5 @@
 const path = require("path");
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
   devtool: "source-map",
@@ -18,6 +19,16 @@ module.exports = {
         test: /\.tsx?$/,
         loader: "ts-loader",
         exclude: /node_modules/
+      }, {
+        test: /\.scss$/,
+        use: [{
+          loader: "style-loader"
+        }, {
+          loader: "css-loader"
+        }, {
+          loader: "sass-loader"
+        }],
+        exclude: /node_modules/
       }]
   },
   watch: true,
@@ -26,6 +37,5 @@ module.exports = {
     poll: 700,
     ignored: [path.resolve(__dirname, "dist"), path.resolve(__dirname, "node_modules"), path.resolve(__dirname, "src/js/game/assets/**/*"), path.resolve(__dirname, "./**/**/**/**/**/*.png")]
   },
-  
   mode: "development"
 };

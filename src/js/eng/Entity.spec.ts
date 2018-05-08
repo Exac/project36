@@ -1,14 +1,8 @@
 import { assert, expect } from "chai";
-import { c } from "./c";
 import { Component } from "./Component";
 import Entity from "./Entity";
-import EntityFactory from "./EntityFactory";
 import { EntityShim } from "./EntityShim";
 import SimpleComponent from "./SimpleComponent";
-
-class E extends Entity {
-  constructor(placeholder: any) {super(placeholder); }
-}
 
 describe("Entity", () => {
   it("can create simple shim of abstract Entity", () => {

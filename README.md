@@ -34,8 +34,10 @@ To refresh in the browser, install the LiveReload plugin, set the Host URL to ``
 ```
 npm run test:runner
 ```
-and then
+will test and watch for changes to re-test.
 ```
 npm run test
 ```
-in another terminal session.
+will test once and exit.
+
+
