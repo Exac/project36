@@ -4,7 +4,7 @@ import { c } from "./c";
 import { Game } from "./Game";
 
 /**
- * There are no tests for Game because it is an
+ * There are no direct tests for Game because it is an
  * abstract class. At runtime, it is compiled down to
  * a normal class and thus cannot be tested. Tests
  * aimed at this class can be found in derived classes

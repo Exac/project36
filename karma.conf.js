@@ -4,7 +4,13 @@ module.exports = function(config) {
     files: [
       { pattern: "src/js/**/*.ts" }
       ],
-    reporters: ["dots", "karma-typescript"], // progress
+    karmaTypescriptConfig: {
+      compilerOptions: {
+        module: "commonjs"
+      },
+      tsconfig: "./tsconfig.json",
+    },
+    reporters: ["progress", "karma-typescript"], // dots, progress
     preprocessors: {
       "src/**/*.ts": "karma-typescript"
     },

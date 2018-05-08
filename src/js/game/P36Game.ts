@@ -1,12 +1,13 @@
 import { c } from "../eng/c";
 import Entity from "../eng/Entity";
+import { EntityShim } from "../eng/EntityShim";
 import { Game } from "../eng/Game";
 import Sprite from "../eng/Sprite";
 
 export default class P36Game extends Game {
   constructor(canvas: CanvasRenderingContext2D) {
     super(canvas);
-    const e: Entity = new Entity("");
+    const e: Entity = new EntityShim("");
     const s: Sprite = new Sprite();
 
     this.render();

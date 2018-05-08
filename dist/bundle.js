@@ -83,11 +83,61 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var Entity = /** @class */ (function () {
     function Entity(placeholder) {
-        this.name = placeholder.toString();
+        this.zoneX = 0;
+        this.zoneY = 0;
     }
+    Entity.addComponent = function (component) {
+        Entity.stage.push(component);
+    };
+    Entity.removeComponent = function (component) {
+        var removalIndex = Entity.stage.indexOf(component);
+        if (removalIndex !== -1) {
+            Entity.stage.splice(removalIndex, 1);
+        }
+    };
+    Entity.removeAllComponents = function () {
+        Entity.stage = [];
+    };
+    Entity.stage = [];
     return Entity;
 }());
 exports.default = Entity;
+
+
+/***/ }),
+
+/***/ "./src/js/eng/EntityShim.ts":
+/*!**********************************!*\
+  !*** ./src/js/eng/EntityShim.ts ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var Entity_1 = __importDefault(__webpack_require__(/*! ./Entity */ "./src/js/eng/Entity.ts"));
+var EntityShim = /** @class */ (function (_super) {
+    __extends(EntityShim, _super);
+    function EntityShim(placeholder) {
+        return _super.call(this, placeholder) || this;
+    }
+    return EntityShim;
+}(Entity_1.default));
+exports.EntityShim = EntityShim;
 
 
 /***/ }),
@@ -232,7 +282,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var c_1 = __webpack_require__(/*! ../eng/c */ "./src/js/eng/c.ts");
-var Entity_1 = __importDefault(__webpack_require__(/*! ../eng/Entity */ "./src/js/eng/Entity.ts"));
+var EntityShim_1 = __webpack_require__(/*! ../eng/EntityShim */ "./src/js/eng/EntityShim.ts");
 var Game_1 = __webpack_require__(/*! ../eng/Game */ "./src/js/eng/Game.ts");
 var Sprite_1 = __importDefault(__webpack_require__(/*! ../eng/Sprite */ "./src/js/eng/Sprite.ts"));
 var P36Game = /** @class */ (function (_super) {
@@ -253,7 +303,7 @@ var P36Game = /** @class */ (function (_super) {
             // TODO: Only render if not already rendering in a loop.
             requestAnimationFrame(_this.render);
         };
-        var e = new Entity_1.default("");
+        var e = new EntityShim_1.EntityShim("");
         var s = new Sprite_1.default();
         _this.render();
         return _this;

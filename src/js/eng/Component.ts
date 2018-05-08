@@ -9,7 +9,7 @@ export abstract class Component {
 
   public zoneX: number;
   public zoneY: number;
-  public order: number | string;
+  public order: number | string; // which order the component is draw on stage
 
   private x: number;
   private y: number;

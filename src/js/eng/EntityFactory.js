@@ -1,9 +1,6 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-var Entity_1 = __importDefault(require("./Entity"));
+var EntityShim_1 = require("./EntityShim");
 var EntityFactory = /** @class */ (function () {
     function EntityFactory() {
         // this is a static class
@@ -11,7 +8,7 @@ var EntityFactory = /** @class */ (function () {
     EntityFactory.createEntity = function (entity) {
         // return an Entity
         // ...
-        return new Entity_1.default(entity);
+        return new EntityShim_1.EntityShim(entity);
     };
     return EntityFactory;
 }());

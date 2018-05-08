@@ -15,7 +15,7 @@ var chai_2 = require("chai");
 var c_1 = require("./c");
 var Game_1 = require("./Game");
 /**
- * There are no tests for Game because it is an
+ * There are no direct tests for Game because it is an
  * abstract class. At runtime, it is compiled down to
  * a normal class and thus cannot be tested. Tests
  * aimed at this class can be found in derived classes
